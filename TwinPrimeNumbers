@@ -1,0 +1,35 @@
+import java.io.*;
+class Coding2
+{
+    public static boolean isPrime(int x)
+    {
+        boolean f=true;
+        for(int i=2;i<x/2;i++)
+        {
+            if(x%i==0)
+            {
+                f=false;
+                break;
+            }
+        }
+        return f;
+    }
+    public static void main(String args[])throws IOException
+    {
+        int x1,x2;
+        InputStreamReader in=new InputStreamReader(System.in);
+        BufferedReader br=new BufferedReader(in);
+        System.out.println("Enter first number:");
+        x1=Integer.parseInt(br.readLine());
+        System.out.println("Enter second number:");
+        x2=Integer.parseInt(br.readLine());
+        if(isPrime(x1)==true&&isPrime(x2)==true&&Math.abs(x2-x1)==2)
+        {
+            System.out.println("Given number is Twin Prime Number");
+        }
+        else
+        {
+            System.out.println("Given number is Not a Twin Prime NUmber");
+        }
+    }
+}
